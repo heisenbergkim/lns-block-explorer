@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Center, Footer } from "../../components";
+import { Header, Center, Footer } from "components";
 
 export class Home extends Component {
   render() {
