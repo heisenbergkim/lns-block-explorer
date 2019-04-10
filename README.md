@@ -1,7 +1,7 @@
-# LNS Standard Coins(ERC20)-Exporter
+# LNS Standard Coins(ERC20)-Explorer
 ### Lightweight explorer for ERC20 based Ethereum ERC20 tokens
 
-ERC20-Exporter is an explorer built with NodeJS, Express and Geth. It does not require an external database and retrieves all information on the fly from a backend Ethereum node.
+LNS Standard Coins(ERC20)-Explorer is an explorer built with NodeJS, Express and Geth. It does not require an external database and retrieves all information on the fly from a backend Ethereum node.
 
 
 ## Current Features
