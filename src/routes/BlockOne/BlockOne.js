@@ -46,7 +46,10 @@ const styles = theme => ({
 });
 
 const BlockOne = props => (
-  <Query query={GET_BLOCK_ONE} variables={{props.match.params.BlockId}}>
+  <Query
+    query={GET_BLOCK_ONE}
+    variables={{ BlockId: parseInt(props.match.params.BlockId) }}
+  >
     {({ loading, error, data }) => {
       const { classes } = props;
       if (loading) return "Loading...";
@@ -70,18 +73,20 @@ const BlockOne = props => (
                     </TableRow>
                   </TableHead>
                   <TableBody>
-                    {data.blocks.map(row => (
-                      <TableRow key={row.number}>
-                        <TableCell component="th" scope="row">
-                          {row.number}
-                        </TableCell>
-                        <TableCell align="left">
-                          <RouterLink to="transactions">{row.hash}</RouterLink>
-                        </TableCell>
+                    {/* {data.blocks.map(row => ( */}
+                    <TableRow key={data.block.number}>
+                      <TableCell component="th" scope="row">
+                        {data.block.number}
+                      </TableCell>
+                      <TableCell align="left">
+                        <RouterLink to="transactions">
+                          {data.block.hash}
+                        </RouterLink>
+                      </TableCell>
 
-                        <TableCell align="left">{row.timestamp}</TableCell>
-                      </TableRow>
-                    ))}
+                      <TableCell align="left">{data.block.timestamp}</TableCell>
+                    </TableRow>
+                    {/* ))} */}
                   </TableBody>
                 </Table>
               </Paper>
@@ -94,5 +99,3 @@ const BlockOne = props => (
 );
 
 export default withStyles(styles)(BlockOne);
-
-// // export class Center extend

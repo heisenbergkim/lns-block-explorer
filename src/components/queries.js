@@ -22,8 +22,8 @@ export const GET_BLOCKS = gql`
 `;
 
 export const GET_BLOCK_ONE = gql`
-  query getBlockInfo($TxId: Int!) {
-    block(number: $TxId) {
+  query getBlockInfo($BlockId: Int!) {
+    block(number: $BlockId) {
       number
       hash
       timestamp

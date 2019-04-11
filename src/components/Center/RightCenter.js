@@ -19,7 +19,9 @@ import { GET_TRANSACTIONS } from "components/queries";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
   },
 
   container: {
@@ -28,7 +30,7 @@ const styles = theme => ({
     gridGap: `${theme.spacing.unit * 3}px`
   },
   paper: {
-    padding: theme.spacing.unit,
+    // padding: theme.spacing.unit,
     textAlign: "center",
     color: theme.palette.text.secondary,
     whiteSpace: "nowrap",
