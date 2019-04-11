@@ -26,6 +26,21 @@ export const GET_BLOCK_ONE = gql`
     block(number: $BlockId) {
       number
       hash
+      parentHash
+      mixHash
+      nonce
+      sha3Uncles
+      logsBloom
+      transactionsRoot
+      stateRoot
+      receiptsRoot
+      miner
+      difficulty
+      totalDifficulty
+      extraData
+      size
+      gasLimit
+      gasUsed
       timestamp
     }
   }
