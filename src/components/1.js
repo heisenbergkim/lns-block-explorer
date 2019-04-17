@@ -1,0 +1,6 @@
+"contractName":"LNSStandardCoin",
+"contractAddress":"0x0239743a407a67f0ddb1e01E87B7EEd9690e2fC7",
+"coinName":"LNSCoin",
+"totalSupply":"12900000000",
+"decimals":"0",
+"symbol":"LNS",

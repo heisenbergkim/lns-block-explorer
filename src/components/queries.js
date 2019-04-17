@@ -1,4 +1,5 @@
 import gql from "graphql-tag";
+//Query하고 싶은 필드만을 명시함...
 
 export const GET_TRANSACTIONS = gql`
   {
@@ -7,6 +8,7 @@ export const GET_TRANSACTIONS = gql`
       transactionHash
       from
       to
+      status
     }
   }
 `;

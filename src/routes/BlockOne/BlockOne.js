@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 // import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
@@ -13,12 +13,12 @@ import Grid from "@material-ui/core/Grid";
 // import Button from "@material-ui/core/Button";
 
 import TextField from "@material-ui/core/TextField";
-import Input from "@material-ui/core/Input";
+// import Input from "@material-ui/core/Input";
 
 import { Query } from "react-apollo";
 import { GET_BLOCK_ONE } from "components/queries";
 
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 import { Header, Center, Footer } from "components";
 import BlockCard from "components/BlockCard/BlockCard";
 

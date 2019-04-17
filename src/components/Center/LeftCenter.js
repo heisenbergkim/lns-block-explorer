@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
@@ -22,47 +22,70 @@ import { Link as RouterLink } from "react-router-dom";
 
 const styles = theme => ({
   root: {
-    flexGrow: 1
-    // flexDirection="row"
+    // flexGrow: 1,
+    // textOverflow: "ellipsis"
+    // overflow: "hidden"
+    // fontWeight: 'normal',
+    // fontSize: 12,
+    // paddingLeft: theme.spacing,
+    // paddingRight: theme.spacing,
+    height: theme.height,
+    textAlign: "left"
   },
 
-  container: {
-    display: "grid",
-    gridTemplateColumns: "repeat(12, 1fr)",
-    gridGap: `${theme.spacing.unit * 3}px`
-  },
+  // container: {
+  //   display: "grid",
+  //   gridTemplateColumns: "repeat(12, 1fr)",
+  //   gridGap: `${theme.spacing.unit * 1}px`
+  // },
   paper: {
-    padding: theme.spacing.unit,
+    padding: theme.spacing.unit * 1,
     textAlign: "center",
-    color: theme.palette.text.secondary,
-    whiteSpace: "nowrap",
-    marginBottom: theme.spacing.unit
+    // color: theme.palette.text.secondary,
+    // whiteSpace: "nowrap",
+    // marginBottom: theme.spacing.unit,
+    // overflowX: "auto"
+
+    // width: "100%",
+    marginTop: theme.spacing.unit * 3,
+    overflowX: "auto"
   },
   divider: {
-    margin: `${theme.spacing.unit * 4}px 2`
+    // margin: `${theme.spacing.unit * 4}px 2`
   },
 
   table: {
-    fontFamily: theme.typography.fontFamily,
-    minWidth: 100
+    // fontFamily: theme.typography.fontFamily
+    // minWidth: 100
   }
 });
 
-//for testing...
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-  id += 1;
-  return { id, name, calories, fat, carbs, protein };
+function timeConverter(timeStamp) {
+  var a = new Date(timeStamp * 1000);
+  var months = [
+    "1월",
+    "2월",
+    "3월",
+    "4월",
+    "5월",
+    "6월",
+    "7월",
+    "8월",
+    "9월",
+    "10월",
+    "11월",
+    "12월"
+  ];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = year + "년 " + month + date + "일 " + hour + ":" + min + ":" + sec;
+  return time;
 }
-
-//for testing...
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9)
-];
+// console.log(timeConverter(123456));
 
 // import React from "react";
 // import PropTypes from "prop-types";
@@ -74,9 +97,14 @@ const LeftCenter = props => (
       if (error) return `Error! ${error.message}`;
       console.log(data);
 
+      // let tmpDate = this.data.timestamp;
+      // let d = new Date(tmpDate * 1000);
+      // tmpDate = d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate(); //ok ...it works
+
       return (
-        <Grid container justify="center" spacing={6}>
-          <Grid item xs={10} sm={6}>
+        <Grid container justify="center" spacing={24}>
+          {/* <Grid item xs={10} sm={6}> */}
+          <Grid item xs sm={8}>
             <Paper className={classes.paper}>
               <Button color="inherit">Latest Blocks</Button>
               <Table className={classes.table}>
@@ -87,17 +115,31 @@ const LeftCenter = props => (
                     <TableCell align="left">TimeStamp</TableCell>
                   </TableRow>
                 </TableHead>
+
                 <TableBody>
                   {data.blocks.map(row => (
                     <TableRow key={row.number}>
                       <TableCell component="th" scope="row">
-                        {row.number}
+                        {/* <TableCell> */}
+                        <RouterLink to={`/blockone/${row.number}/`}>
+                          {row.number}
+                        </RouterLink>
                       </TableCell>
-                      <TableCell align="left">
-                        <RouterLink to="transactions">{row.hash}</RouterLink>
+                      <TableCell
+                        align="left"
+                        style={{
+                          maxWidth: "5px",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis"
+                          // backgroundColor: "green"
+                        }}
+                      >
+                        {row.hash}
                       </TableCell>
 
-                      <TableCell align="left">{row.timestamp}</TableCell>
+                      <TableCell align="left">
+                        {timeConverter(row.timestamp)}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -112,40 +154,6 @@ const LeftCenter = props => (
               View All Blocks
             </Button>
           </Grid>
-
-          {/* <Grid item xs>
-            <Paper className={classes.paper}>
-              <Button color="inherit">Transactions</Button>
-              <Table className={classes.table}>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Transaction Hash:</TableCell>
-                    <TableCell align="right">FromAddress</TableCell>
-                    <TableCell align="right">ToAddress</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {data.transactions.map(row => (
-                    <TableRow key={row.blockNumber}>
-                      <TableCell component="th" scope="row">
-                        {row.transactionHash}
-                      </TableCell>
-                      <TableCell align="right">{row.from}</TableCell>
-                      <TableCell align="right">{row.to}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Paper>
-            <Button
-              fullWidth="true"
-              variant="contained"
-              color="primary"
-              className={classes.button}
-            >
-              View All Transactions
-            </Button>
-          </Grid> */}
         </Grid>
       );
     }}

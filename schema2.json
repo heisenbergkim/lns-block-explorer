@@ -1,0 +1,625 @@
+{
+	"users": {},
+	"system.views": {
+		"_id": {
+			"type": "string",
+			"required": true
+		},
+		"viewOn": {
+			"type": "string",
+			"required": true
+		},
+		"pipeline": {
+			"type": "Array",
+			"required": true
+		}
+	},
+	"abis": {
+		"_id": {
+			"type": "Object",
+			"structure": {
+				"_bsontype": {
+					"type": "string",
+					"required": true
+				},
+				"id": {
+					"type": "Uint8Array",
+					"required": true
+				},
+				"toHexString": {
+					"type": "function",
+					"required": true
+				},
+				"get_inc": {
+					"type": "function",
+					"required": true
+				},
+				"getInc": {
+					"type": "function",
+					"required": true
+				},
+				"generate": {
+					"type": "function",
+					"required": true
+				},
+				"toJSON": {
+					"type": "function",
+					"required": true
+				},
+				"equals": {
+					"type": "function",
+					"required": true
+				},
+				"getTimestamp": {
+					"type": "function",
+					"required": true
+				},
+				"generationTime": {
+					"type": "number",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"contractName": {
+			"type": "string",
+			"required": true
+		},
+		"contractAddress": {
+			"type": "string",
+			"required": true
+		},
+		"coinName": {
+			"type": "string",
+			"required": true
+		},
+		"totalSupply": {
+			"type": "string",
+			"required": true
+		},
+		"decimals": {
+			"type": "string",
+			"required": true
+		},
+		"symbol": {
+			"type": "string",
+			"required": true
+		},
+		"abi": {
+			"type": "Array",
+			"required": true
+		}
+	},
+	"blockStorage": {
+		"_id": {
+			"type": "Object",
+			"structure": {
+				"_bsontype": {
+					"type": "string",
+					"required": true
+				},
+				"id": {
+					"type": "Uint8Array",
+					"required": true
+				},
+				"toHexString": {
+					"type": "function",
+					"required": true
+				},
+				"get_inc": {
+					"type": "function",
+					"required": true
+				},
+				"getInc": {
+					"type": "function",
+					"required": true
+				},
+				"generate": {
+					"type": "function",
+					"required": true
+				},
+				"toJSON": {
+					"type": "function",
+					"required": true
+				},
+				"equals": {
+					"type": "function",
+					"required": true
+				},
+				"getTimestamp": {
+					"type": "function",
+					"required": true
+				},
+				"generationTime": {
+					"type": "number",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"number": {
+			"type": "number",
+			"required": true
+		},
+		"hash": {
+			"type": "string",
+			"required": true
+		},
+		"parentHash": {
+			"type": "string",
+			"required": true
+		},
+		"mixHash": {
+			"type": "string",
+			"required": true
+		},
+		"nonce": {
+			"type": "string",
+			"required": true
+		},
+		"sha3Uncles": {
+			"type": "string",
+			"required": true
+		},
+		"logsBloom": {
+			"type": "string",
+			"required": true
+		},
+		"transactionsRoot": {
+			"type": "string",
+			"required": true
+		},
+		"stateRoot": {
+			"type": "string",
+			"required": true
+		},
+		"receiptsRoot": {
+			"type": "string",
+			"required": true
+		},
+		"miner": {
+			"type": "string",
+			"required": true
+		},
+		"difficulty": {
+			"type": "string",
+			"required": true
+		},
+		"totalDifficulty": {
+			"type": "string",
+			"required": true
+		},
+		"extraData": {
+			"type": "string",
+			"required": true
+		},
+		"size": {
+			"type": "number",
+			"required": true
+		},
+		"gasLimit": {
+			"type": "number",
+			"required": true
+		},
+		"gasUsed": {
+			"type": "number",
+			"required": true
+		},
+		"timestamp": {
+			"type": "number",
+			"required": true
+		},
+		"transactions": {
+			"type": "Array",
+			"required": true
+		},
+		"uncles": {
+			"type": "Array",
+			"required": true
+		}
+	},
+	"receiptStorage": {
+		"_id": {
+			"type": "Object",
+			"structure": {
+				"_bsontype": {
+					"type": "string",
+					"required": true
+				},
+				"id": {
+					"type": "Uint8Array",
+					"required": true
+				},
+				"toHexString": {
+					"type": "function",
+					"required": true
+				},
+				"get_inc": {
+					"type": "function",
+					"required": true
+				},
+				"getInc": {
+					"type": "function",
+					"required": true
+				},
+				"generate": {
+					"type": "function",
+					"required": true
+				},
+				"toJSON": {
+					"type": "function",
+					"required": true
+				},
+				"equals": {
+					"type": "function",
+					"required": true
+				},
+				"getTimestamp": {
+					"type": "function",
+					"required": true
+				},
+				"generationTime": {
+					"type": "number",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"transactionHash": {
+			"type": "string",
+			"required": true
+		},
+		"transactionIndex": {
+			"type": "number",
+			"required": true
+		},
+		"blockHash": {
+			"type": "string",
+			"required": true
+		},
+		"blockNumber": {
+			"type": "number",
+			"required": true
+		},
+		"from": {
+			"type": "string",
+			"required": true
+		},
+		"to": {
+			"type": "string",
+			"required": true
+		},
+		"gasUsed": {
+			"type": "number",
+			"required": true
+		},
+		"cumulativeGasUsed": {
+			"type": "number",
+			"required": true
+		},
+		"contractAddress": {
+			"type": "undefined",
+			"required": false
+		},
+		"logs": {
+			"type": "Array",
+			"required": true
+		},
+		"status": {
+			"type": "boolean",
+			"required": true
+		},
+		"logsBloom": {
+			"type": "string",
+			"required": true
+		},
+		"v": {
+			"type": "string",
+			"required": true
+		},
+		"r": {
+			"type": "string",
+			"required": true
+		},
+		"s": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"transactionStorage": {
+		"_id": {
+			"type": "Object",
+			"structure": {
+				"_bsontype": {
+					"type": "string",
+					"required": true
+				},
+				"id": {
+					"type": "Uint8Array",
+					"required": true
+				},
+				"toHexString": {
+					"type": "function",
+					"required": true
+				},
+				"get_inc": {
+					"type": "function",
+					"required": true
+				},
+				"getInc": {
+					"type": "function",
+					"required": true
+				},
+				"generate": {
+					"type": "function",
+					"required": true
+				},
+				"toJSON": {
+					"type": "function",
+					"required": true
+				},
+				"equals": {
+					"type": "function",
+					"required": true
+				},
+				"getTimestamp": {
+					"type": "function",
+					"required": true
+				},
+				"generationTime": {
+					"type": "number",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"transactionHash": {
+			"type": "string",
+			"required": true
+		},
+		"transactionIndex": {
+			"type": "number",
+			"required": true
+		},
+		"blockHash": {
+			"type": "string",
+			"required": true
+		},
+		"blockNumber": {
+			"type": "number",
+			"required": true
+		},
+		"from": {
+			"type": "string",
+			"required": true
+		},
+		"to": {
+			"type": "string",
+			"required": false
+		},
+		"gasUsed": {
+			"type": "number",
+			"required": true
+		},
+		"cumulativeGasUsed": {
+			"type": "number",
+			"required": true
+		},
+		"contractAddress": {
+			"type": "string",
+			"required": false
+		},
+		"logs": {
+			"type": "Array",
+			"required": true
+		},
+		"status": {
+			"type": "boolean",
+			"required": true
+		},
+		"logsBloom": {
+			"type": "string",
+			"required": true
+		},
+		"v": {
+			"type": "string",
+			"required": true
+		},
+		"r": {
+			"type": "string",
+			"required": true
+		},
+		"s": {
+			"type": "string",
+			"required": true
+		}
+	},
+	"coinInfoView": {
+		"_id": {
+			"type": "Object",
+			"structure": {
+				"_bsontype": {
+					"type": "string",
+					"required": true
+				},
+				"id": {
+					"type": "Uint8Array",
+					"required": true
+				},
+				"toHexString": {
+					"type": "function",
+					"required": true
+				},
+				"get_inc": {
+					"type": "function",
+					"required": true
+				},
+				"getInc": {
+					"type": "function",
+					"required": true
+				},
+				"generate": {
+					"type": "function",
+					"required": true
+				},
+				"toJSON": {
+					"type": "function",
+					"required": true
+				},
+				"equals": {
+					"type": "function",
+					"required": true
+				},
+				"getTimestamp": {
+					"type": "function",
+					"required": true
+				},
+				"generationTime": {
+					"type": "number",
+					"required": true
+				}
+			},
+			"required": true
+		},
+		"transactionHash": {
+			"type": "string",
+			"required": true
+		},
+		"transactionIndex": {
+			"type": "number",
+			"required": true
+		},
+		"blockHash": {
+			"type": "string",
+			"required": true
+		},
+		"blockNumber": {
+			"type": "number",
+			"required": true
+		},
+		"from": {
+			"type": "string",
+			"required": true
+		},
+		"to": {
+			"type": "string",
+			"required": true
+		},
+		"gasUsed": {
+			"type": "number",
+			"required": true
+		},
+		"cumulativeGasUsed": {
+			"type": "number",
+			"required": true
+		},
+		"contractAddress": {
+			"type": "undefined",
+			"required": false
+		},
+		"logs": {
+			"type": "Array",
+			"required": true
+		},
+		"status": {
+			"type": "boolean",
+			"required": true
+		},
+		"logsBloom": {
+			"type": "string",
+			"required": true
+		},
+		"v": {
+			"type": "string",
+			"required": true
+		},
+		"r": {
+			"type": "string",
+			"required": true
+		},
+		"s": {
+			"type": "string",
+			"required": true
+		},
+		"customerDoc": {
+			"type": "Object",
+			"structure": {
+				"_id": {
+					"type": "Object",
+					"structure": {
+						"_bsontype": {
+							"type": "string",
+							"required": true
+						},
+						"id": {
+							"type": "Uint8Array",
+							"required": true
+						},
+						"toHexString": {
+							"type": "function",
+							"required": true
+						},
+						"get_inc": {
+							"type": "function",
+							"required": true
+						},
+						"getInc": {
+							"type": "function",
+							"required": true
+						},
+						"generate": {
+							"type": "function",
+							"required": true
+						},
+						"toJSON": {
+							"type": "function",
+							"required": true
+						},
+						"equals": {
+							"type": "function",
+							"required": true
+						},
+						"getTimestamp": {
+							"type": "function",
+							"required": true
+						},
+						"generationTime": {
+							"type": "number",
+							"required": true
+						}
+					},
+					"required": true
+				},
+				"contractName": {
+					"type": "string",
+					"required": true
+				},
+				"contractAddress": {
+					"type": "string",
+					"required": true
+				},
+				"coinName": {
+					"type": "string",
+					"required": true
+				},
+				"totalSupply": {
+					"type": "string",
+					"required": true
+				},
+				"decimals": {
+					"type": "string",
+					"required": true
+				},
+				"symbol": {
+					"type": "string",
+					"required": true
+				},
+				"abi": {
+					"type": "Array",
+					"required": true
+				}
+			},
+			"required": true
+		}
+	}
+}

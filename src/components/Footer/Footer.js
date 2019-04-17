@@ -1,31 +1,72 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import RestoreIcon from "@material-ui/icons/Restore";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
 import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   root: {
-    ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 22,
-    paddingBottom: theme.spacing.unit * 2
+    // width: 1400,
+    // fontSize: 12,
+    // paddingLeft: theme.spacing,
+    // paddingRight: theme.spacing,
+    // height: theme.height,
+    textAlign: "center",
+    // margin: "20%",
+    // ...theme.typography.button,
+    // backgroundColor: theme.palette.common.green,
+    padding: theme.spacing.unit,
+    color: "white",
+    backgroundColor: "#3949ab",
+    width: "100%",
+    marginTop: theme.spacing.unit * 20,
+    marginBottom: 0
   }
 });
 
-export class Footer extends React.Component {
+class Footer extends React.Component {
+  state = {
+    value: 0
+  };
+
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
   render() {
     const { classes } = this.props;
+    const { value } = this.state;
+
     return (
-      <div color="inherit">
-        <Paper color="inherit" className={classes.root} elevation={1}>
-          <Typography variant="h5" component="h3">
-            This is a Footer.
-          </Typography>
-          <Typography component="p">
-            Paper can be used to build surface or other elements for your
-            application.
-          </Typography>
-        </Paper>
+      <div className={classes.root}>
+        <Typography variant="h4" gutterBottom color="inherit">
+          This is Footer
+        </Typography>
+        {/* {"This div's text looks like that of a button."} */}
+        {/* <BottomNavigation
+          value={value}
+          onChange={this.handleChange}
+          showLabels
+          className={classes.root}
+          // color="green"
+          fullWidth="true"
+        >
+          <BottomNavigationAction
+            alignment="center"
+            label="Recents"
+            icon={<RestoreIcon />}
+          />
+          <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+          <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        </BottomNavigation> */}
+
+        <Typography variant="h8" gutterBottom>
+          Copyright © LNSTVholdings.Inc 2000
+        </Typography>
       </div>
     );
   }
