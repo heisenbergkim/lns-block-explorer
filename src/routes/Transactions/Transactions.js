@@ -199,8 +199,7 @@ class Transactions extends React.Component {
   };
 
   render() {
-    // const { classes } = this.props;
-    const { count, rowsPerPage, page } = this.state;
+    const { rowsPerPage, page } = this.state;
 
     return (
       <Query query={GET_TRANSACTIONS}>
@@ -213,11 +212,9 @@ class Transactions extends React.Component {
             Math.min(rowsPerPage, data.length - page * rowsPerPage);
           console.log(data);
           let rows = data.length;
-          // this.setState({ count: rows });
 
           return (
             <Grid container justify="center" spacing={24}>
-              {/* <Grid item xs={10} sm={6}> */}
               <Header />
               <Grid item xs sm={12}>
                 <Paper className={classes.root}>
@@ -227,9 +224,8 @@ class Transactions extends React.Component {
                         <TableRow>
                           <TableCell>Transaction Hash</TableCell>
                           <TableCell align="left">FromAddress</TableCell>
-                          <TableCell align="left">ToAddress (g)</TableCell>
-                          <TableCell align="left">Status (g)</TableCell>
-                          {/* <TableCell align="right">Protein (g)</TableCell> */}
+                          <TableCell align="left">ToAddress </TableCell>
+                          <TableCell align="left">Status </TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>

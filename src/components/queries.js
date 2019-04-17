@@ -48,6 +48,25 @@ export const GET_BLOCK_ONE = gql`
   }
 `;
 
+export const GET_TRANSACTION_ONE = gql`
+  query getTrnsactionInfo($TxId: String!) {
+    transaction(transactionHash: $TxId) {
+      transactionHash
+      blockHash
+      blockNumber
+      from
+      to
+      gasUsed
+      cumulativeGasUsed
+      contractAddress
+      status
+      v
+      r
+      s
+    }
+  }
+`;
+
 // const GET_DOG_PHOTO = gql`
 //   query Dog($breed: String!) {
 //     dog(breed: $breed) {
