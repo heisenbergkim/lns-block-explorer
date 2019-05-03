@@ -19,7 +19,6 @@ Supported Ethereum backend nodes: Parity, Geth
 1. Setup a nodejs & npm environment
 2. Clone this repository to your local machine: `git clone https://github.com/heisenbergkim/lns-block-explorer.git`
 3. Install all dependencies: `npm install`
-4. If need to be, Change `config.js` and adjust the file to your local environment & token
-5. Start the explorer: `npm start`
-6. Browse to `http://localhost:4000`
+4. Start the explorer: `npm start`
+5. Browse to `http://localhost:4000`
 
