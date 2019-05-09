@@ -6,7 +6,7 @@ import ApolloClient from "apollo-boost";
 // };
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql"
+  uri: "http://192.168.153.129:4000/graphql"
   // uri: "http://localhost:4000"
 });
 

@@ -67,11 +67,22 @@ export const GET_TRANSACTION_ONE = gql`
   }
 `;
 
-// const GET_DOG_PHOTO = gql`
-//   query Dog($breed: String!) {
-//     dog(breed: $breed) {
-//       id
-//       displayImage
-//     }
-//   }
-// `;
+// get ERC20 token transfers
+export const GET_TOKENS = gql`
+  {
+    receiptsAwait {
+      transactionHash
+      from
+      to
+      logs {
+        topics
+        data
+      }
+
+      contractInfoDoc {
+        coinName
+        symbol
+      }
+    }
+  }
+`;

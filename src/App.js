@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // import { Header, Center, Footer } from "./components";
-import { Transactions, TransactionOne, BlockOne, Home } from "./routes";
+import { Transactions, TransactionOne, BlockOne, Home, Tokens } from "./routes";
 
 class App extends React.Component {
   render() {
@@ -19,6 +19,7 @@ class App extends React.Component {
                 component={TransactionOne}
               />
               <Route path={"/blockone/:BlockId"} component={BlockOne} />
+              <Route path="/tokens" component={Tokens} />
             </Switch>
           </div>
         </Router>

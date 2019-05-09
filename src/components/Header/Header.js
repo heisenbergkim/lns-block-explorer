@@ -177,7 +177,6 @@ class Header extends React.Component {
           </Button>
         </MenuItem>
         <MenuItem>
-          {/* <Button color="inherit">Transaction</Button> */}
           <Link to="transactions">
             <Button variant="contained" color="primary">
               Transaction
@@ -185,10 +184,15 @@ class Header extends React.Component {
           </Link>
         </MenuItem>
         <MenuItem>
-          <Button color="inherit">Token</Button>
+          {/* <Button color="inherit">Token</Button> */}
+          <Link to="transactions">
+            <Button variant="contained" color="primary">
+              Transaction
+            </Button>
+          </Link>
         </MenuItem>
         <MenuItem>
-          <Button color="inherit">Chart</Button>
+          <Button color="inherit">Wallet</Button>
         </MenuItem>
         <MenuItem>
           <Button color="inherit">SignIn</Button>
@@ -242,8 +246,13 @@ class Header extends React.Component {
                 </Button>
               </Link>
 
-              <Button color="inherit">Token</Button>
-              <Button color="inherit">Chart</Button>
+              <Link to="tokens">
+                <Button variant="contained" color="primary">
+                  Token
+                </Button>
+              </Link>
+
+              <Button color="inherit">Wallet</Button>
               <Button color="inherit">SignIn</Button>
             </div>
             <div className={classes.sectionMobile}>

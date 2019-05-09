@@ -3,7 +3,7 @@ import { Header, Footer } from "../../components";
 
 // import gql from "graphql-tag";
 import { Query } from "react-apollo";
-import { GET_TRANSACTIONS } from "components/queries";
+import { GET_TOKENS } from "components/queries";
 import { graphql } from "react-apollo";
 import gql from "graphql-tag";
 
@@ -140,37 +140,9 @@ const styles = theme => ({
 
 class Transactions extends React.Component {
   state = {
-    testrows: [
-      // createData("Cupcake", 305, 3.7),
-      // createData("Donut", 452, 25.0),
-      // createData("Eclair", 262, 16.0),
-      // createData("Frozen yoghurt", 159, 6.0),
-      // createData("Gingerbread", 356, 16.0),
-      // createData("Honeycomb", 408, 3.2),
-      // createData("Ice cream sandwich", 237, 9.0),
-      // createData("Jelly Bean", 375, 0.0),
-      // createData("KitKat", 518, 26.0),
-      // createData("Lollipop", 392, 0.2),
-      // createData("Marshmallow", 318, 0),
-      // createData("Nougat", 360, 19.0),
-      // createData("Oreo", 437, 18.0)
-      createData("Cupcake", 305, 3.7, 67, 4.3),
-      createData("Donut", 452, 25.0, 51, 4.9),
-      createData("Eclair", 262, 16.0, 24, 6.0),
-      createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-      createData("Gingerbread", 356, 16.0, 49, 3.9),
-      createData("Honeycomb", 408, 3.2, 87, 6.5),
-      createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-      createData("Jelly Bean", 375, 0.0, 94, 0.0),
-      createData("KitKat", 518, 26.0, 65, 7.0),
-      createData("Lollipop", 392, 0.2, 98, 0.0),
-      createData("Marshmallow", 318, 0, 81, 2.0),
-      createData("Nougat", 360, 19.0, 9, 37.0),
-      createData("Oreo", 437, 18.0, 63, 4.0)
-    ].sort((a, b) => (a.calories < b.calories ? -1 : 1)),
     page: 0,
-
     count: 0,
+
     // rowsPerPage: 5
     rowsPerPage: 10
   };
@@ -187,7 +159,7 @@ class Transactions extends React.Component {
     const { rowsPerPage, page } = this.state;
 
     return (
-      <Query query={GET_TRANSACTIONS}>
+      <Query query={GET_TOKENS}>
         {({ loading, error, data }) => {
           const { classes } = this.props;
           if (loading) return "Loading...";
@@ -210,11 +182,12 @@ class Transactions extends React.Component {
                           <TableCell>Transaction Hash</TableCell>
                           <TableCell align="left">FromAddress</TableCell>
                           <TableCell align="left">ToAddress </TableCell>
-                          <TableCell align="left">Status </TableCell>
+                          <TableCell align="left">Value </TableCell>
+                          <TableCell align="left">Token </TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {data.transactions.map(row => (
+                        {data.receiptsAwait.map(row => (
                           <TableRow key={row.id}>
                             <TableCell component="th" scope="row">
                               <RouterLink
@@ -224,11 +197,15 @@ class Transactions extends React.Component {
                               </RouterLink>
                             </TableCell>
                             <TableCell align="left">{row.from}</TableCell>
-                            <TableCell align="left">{row.to}</TableCell>
                             <TableCell align="left">
-                              {JSON.stringify(row.status)}
+                              {row.logs[0].topics[2]}
                             </TableCell>
-                            {/* <TableCell align="right">{row.fat}</TableCell> */}
+                            <TableCell align="left">
+                              {row.logs[0].data}
+                            </TableCell>
+                            <TableCell align="right">
+                              {row.contractInfoDoc.symbol}
+                            </TableCell>
                           </TableRow>
                         ))}
                         {emptyRows > 0 && (
