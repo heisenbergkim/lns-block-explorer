@@ -201,9 +201,16 @@ class Transactions extends React.Component {
                               {row.logs[0].topics[2]}
                             </TableCell>
                             <TableCell align="left">
-                              {row.logs[0].data}
+                              {parseInt(row.logs[0].data)}
                             </TableCell>
-                            <TableCell align="right">
+                            <TableCell align="left">
+                              <img
+                                src={require(`../../symbol_images/${
+                                  row.contractInfoDoc.symbol
+                                }.png`)}
+                                alt="LNS"
+                                className="LNS"
+                              />
                               {row.contractInfoDoc.symbol}
                             </TableCell>
                           </TableRow>
